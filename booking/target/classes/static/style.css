@@ -1,0 +1,451 @@
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("train.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+/* Stylish Quote Section */
+.quote-banner {
+    background: linear-gradient(45deg, #ff6f61, #ffab40); /* Gradient background */
+    color: white;
+    padding: 100px 20px; /* Padding for spacious design */
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Text Animation for Smooth Entry */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quote-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for text effect */
+}
+
+.quote-text p {
+    font-size: 20px;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for secondary text */
+}
+
+
+/* Navbar Styles */
+/* Navbar Styles */
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, #ff6f61, #ffab40, #6a1b9a); /* Gradient background */
+    color: white;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    display: flex;
+    justify-content: space-between; /* Distribute logo and links evenly */
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px; /* Increased width */
+    height: 60px; /* Increased height */
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+    color: #fff;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.navbar-links a:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Responsive Navbar for Mobile */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        margin-bottom: 10px;
+    }
+
+    .navbar-links a {
+        padding: 15px;
+        font-size: 20px;
+    }
+}
+
+/* Page Content Styles */
+.container {
+    width: 90%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 20px auto; /* Center horizontally and add vertical spacing */
+    padding: 20px;
+    border: 3px solid #ff6600;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduce padding for smaller screens */
+        border-width: 2px; /* Slightly thinner border */
+    }
+}
+
+/* Form fields styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label,
+form input {
+    margin-bottom: 10px;
+}
+
+form input {
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 5px; /* Optional: Adds rounded corners to input fields */
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Rounded corners for the button */
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Hiding message initially */
+.hidden {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/*   for profile page*/
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+p {
+    font-size: 1em;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+span {
+    font-weight: 500;
+    color: #555;
+}
+
+button {
+    padding: 10px 22px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+/* for home page of process*/
+.booking-process {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-process h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.booking-process .steps {
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.booking-process .steps li {
+    margin: 10px 0;
+}
+
+.booking-process .note {
+    font-size: 1em;
+    margin-top: 15px;
+    color: #ffe0b2;
+    font-style: italic;
+    text-align: center;
+}
+/*for contact page */
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(135deg, #f3f4f7, #e8eaf6);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.person {
+    background: #fff;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.person-photo {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ff9800;
+}
+
+.person h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.person p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.person p strong {
+    color: #000;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* for about page*/
+/* Info Banner Styling */
+.info-banner {
+    background: linear-gradient(to bottom right, #007bff, #1e90ff);
+    color: #fff;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Centralized with some margin */
+}
+
+.info-banner + .info-banner {
+    margin-top: 30px; /* Spacing between sections */
+}
+
+/* Image Styling */
+.info-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Content Styling */
+.info-text {
+    flex: 1;
+}
+
+.info-text h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.info-text p, .info-text ul {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.info-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-text ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.info-text ul li:before {
+    content: "✔";
+    color: #ffdd57;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Links Styling */
+.info-text a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.info-text a:hover {
+    color: #ffc107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-image img {
+        margin-bottom: 20px;
+    }
+
+    .info-text h2 {
+        font-size: 20px;
+    }
+
+    .info-text p, .info-text ul {
+        font-size: 14px;
+    }
+}

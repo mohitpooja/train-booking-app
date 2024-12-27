@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <style>
+
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Stylish Quote Section with Gradient Background -->
+<section class="quote-banner">
+    <div class="quote-text">
+        <h2>Get Your Confirmed Train Ticket</h2>
+        <p>Book your tickets now and travel without the hassle!</p>
+    </div>
+</section>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img src="clogo.png" alt="Karn Travels Logo" class="logo">
+    </div>
+    <ul class="navbar-links">
+        <li><a href="Ahome.html">Home</a></li>
+        <li><a href="bookTicket.html">Book Ticket</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/profile.html">Profile</a></li>
+    </ul>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <h1>Sign Up</h1>
+    <form id="SignUpForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="number" id="aadhar" name="aadhar" placeholder="Enter your aadhar number" required>
+
+        <label for="password">Create Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your New Password" required>
+
+        <button type="button" id="SignUpBtn">Sign Up</button>
+        
+    </form>
+     <a href="http://localhost:8080/login">Login </a>
+    <div id="message" class="hidden"></div>
+</div>
+
+<script >
+    
+   
+    document.getElementById('SignUpBtn').addEventListener('click' ,() =>{
+    const name= document.getElementById('name').value;
+    const email= document.getElementById('email').value;
+    const aadhar = document.getElementById('aadhar').value;
+    const phone = document.getElementById('phone').value;
+    const password=document.getElementById('password').value;
+    const username=document.getElementById('username').value;
+
+    if(!name || !email || !aadhar || !phone || !password || !username){
+         showMessage('Please fill all fields.', 'error');
+         return;
+    }
+
+    fetch('http://localhost:8080/signupR' , {
+     method : 'POST',
+     headers : {
+       'content-type' :'application/json',
+      },
+      body : JSON.stringify({name,email,aadhar,phone,password,username}),
+    })
+
+     .then(response => response.json())
+     .then(data =>{
+     if(data.success){
+         showMessage('Signup successful! Redirecting to login...', 'success');
+         document.getElementById('SignUpForm').reset();
+         setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000); // Wait 2 seconds before redirecting
+     }else {
+              showMessage('Failed to sign up. Please try again.', 'error');
+             }
+
+     })
+
+     .catch(error => {
+                 console.error('Error:', error);
+                 showMessage('An error occurred  . Please try again later.', 'error');
+     });
+
+
+})
+    function showMessage(message, type) {
+    const messageDiv = document.getElementById('message');
+    messageDiv.className = type;
+    messageDiv.innerHTML = message;
+    messageDiv.style.display = 'block';
+}
+
+
+</script>
+</body>
+</html>

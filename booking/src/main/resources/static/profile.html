@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="clogo.png" alt="Karn Travels Logo" class="logo">
+        </div>
+        <ul class="navbar-links">
+            <li><a href="Ahome.html">Home</a></li>
+            <li><a href="bookTicket.html">Book Ticket</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome, <span id="username"></span></h1>
+        <p>Name: <span id="name"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Phone: <span id="phone"></span></p>
+        <p>Aadhar: <span id="aadhar"></span></p>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        async function fetchUserDetails() {
+    try {
+        let response = await fetch('/profile');
+        if (!response.ok) {
+            throw new Error('User not found');
+        }
+        let user = await response.json();
+        document.getElementById('username').innerText = user.username;
+        document.getElementById('name').innerText = user.name;
+        document.getElementById('email').innerText = user.email;
+        document.getElementById('phone').innerText = user.phone;
+        document.getElementById('aadhar').innerText = user.aadhar;
+    } catch (error) {
+        console.error('Error fetching user details:', error);
+    }
+}
+
+fetchUserDetails();
+
+
+
+        function logout() {
+            fetch('/logout', { method: 'POST' })
+                .then(() => {
+                    window.location.href = '/';
+                })
+                .catch(error => console.error('Logout Error:', error));
+        }
+
+        
+    </script>
+</body>
+</html>
